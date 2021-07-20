@@ -1,0 +1,135 @@
+# Any line followed by a '#' character is ignored
+# Section headings must be in square brackets
+# Subsections within a section should follow the format:
+# [filename within code directory][tab character \t][subsection title]
+
+[Miscel\'aneas]
+misc/misc_template.cpp	Code Template
+misc/misc_test.sh	Checker
+misc/misc_debug_tricks.h	Herramientas para el Debug
+misc/misc_especificadores.cpp	Especificadores de Conversi\'on
+misc/misc_funcion_debug.cpp	Funcion Debug
+misc/misc_math_expression.java	Procesar Expresiones Matem\'aticas 
+misc/misc_parse_line.cpp	Parsear una L\'inea Completa a Enteros
+misc/misc_medir_tiempo.cpp	Tiempo Real de Ejecuci\'on de un Fragmento de C\'odigo 
+misc/misc_stack_size.cpp	Stack Size
+misc/misc_fast_input.cpp	Fast Input
+misc/misc_funciones_stl.cpp	Funciones Importantes de C++
+misc/misc_funciones_propias.cpp	Funciones Propias
+
+[Ad-Hoc]
+adhoc/adhoc_cube.cpp	Cubo de Seis Caras
+adhoc/adhoc_histograma.cpp	Rectangulo M\'aximo Bajo el Histograma
+adhoc/adhoc_lis.cpp	Longest Increasing Subsequence
+adhoc/adhoc_floyd.h	Algoritmo de Floyd
+
+[Matem\'atica]
+math/mod_inv.cpp	Exponenciaci\'on e Inverso Modular 
+math/matrix.h	Trabajo con Matrices
+math/fast_rec.cpp	Resoluci\'on Recurrencias Lineales en $O(K^3log(N))$
+math/number_theory.cpp	Criba y Funciones de Teor\'ia de N\'umeros
+math/euclides.cpp	Algoritmo de Euclides Extendido
+math/crt.cpp	Teorema Chino del Resto
+math/dlog.cpp	Logaritmo Discreto
+math/pollar.java	Pollar-Rho
+math/math_fft.cpp	Fast Fourier Transform
+math/math_ntt.h	Number Theoretic Transform
+
+[Manipulaci\'on de Bits]
+bits/bits.cpp	Metodos para Manipular Bits
+bits/bitset.cpp	Bitset
+bits/bit_trie.h	Trie de Bits
+
+[Combinatoria]
+combinatorics/comb_permutaciones.cpp	Permutaciones: orden y n-\'esima
+combinatorics/comb_pascal_triangle.cpp	Combinaciones $O(n^2)$ 
+
+[Grafos]
+graphs/dijkstra_tested.cpp	Dijkstra's Algorithm
+graphs/spfa.cpp	SPFA + Small-Label-First Optimization
+graphs/bellman_ford.cpp	Bellman-Ford Algorithm
+graphs/kth_shortest_path.cpp	Kth Shortest Path
+
+graphs/prim.cpp	Prim's Algorithm
+graphs/kruskal.cpp	Kruskal's Algorithm
+
+graphs/graph_kahn.cpp	Kahn's Algorithm
+graphs/tarjan_artpoints.cpp	Tarjan's Articulation Points Algorithm
+graphs/tarjan_bridges.cpp	Tarjan's Bridges Algorithm
+graphs/tarjan_scc.cpp	Tarjan's SCC Algorithm
+graphs/bridge_tree.cpp	Construcci\'on del Bridge Tree
+graphs/graph_kosaraju.cpp	Kosaraju's SCC Algorithm
+graphs/2sat.cpp	2SAT
+graphs/euler.cpp	Euler Tour
+
+[\'Arboles]
+trees/tree_diam.cpp	Di\'ametro de un \'Arbol
+trees/diametro_y_camino.cpp	Di\'ametro de un \'Arbol Construido
+trees/lca.h	Lowest Common Ancestor
+trees/centroid.cpp	Centroid Decomposition
+trees/euler_tour_tree.cpp	Tree Into Array
+trees/small_to_large.cpp	Small to Large
+trees/small_to_large_ale.cpp	Small to Large (Ale's Style)
+
+[Matching y Flujo]
+flows/flows_fordfulk.h	Ford-Fulkerson $O(E^2 \cdot log(c))$
+flows/flows_dinic.cpp	Algoritmo de Dinic
+flows/flows_scaling_dinic.cpp	Scaling Optimization
+
+[Estructuras de Datos]
+# Unidimensionales
+data_structures/ds_rmq.h	Range Min-Max Query
+data_structures/fenwick.h	Fenwick Tree
+data_structures/ds_wavelet_tree.h	Wavelet Tree
+data_structures/treap.cpp	Implicit Treap con Lazy Propagation
+data_structures/stbeats.cpp	Segment Tree Beats
+data_structures/mo.h	Mo's Algorithm
+
+# Bidimensionales
+data_structures/ds_rmq_2d.h	Range Min-Max Query en Dos Dimensiones
+data_structures/taccum.h	Tabla Acumulativa de Dos Dimensiones
+data_structures/quadtree.cpp	Quadtree
+
+# Miscelaneas
+data_structures/union_find.cpp	Union-Find
+data_structures/monotonic.h	Monotonic Queue
+data_structures/ordered_set_tested.cpp	Set con Order Statistics
+data_structures/ds_hash_table.cpp	Tabla Hash
+
+[Estructuras Persistentes]
+persistent_ds/persistent_st.cpp	Segment Tree Persistente 
+persistent_ds/persistent_trie.cpp	Trie Persistente
+
+[Estrucuras y T\'ecnicas de Optimizaci\'on]
+dp/dp_cht.cpp	Convex Hull Trick
+dp/dp_cht_dinamic.cpp	Convex Hull Trick Din\'amico
+dp/dp_divide_and_conquer.cpp	Divide and Conquer Optimization
+dp/dp_knuth.cpp	Knuth's Optimization
+dp/lichao.h	Li-Chao Tree
+dp/slope.cpp	Optimizador de la Pendiente
+
+[Strings]
+strings/kmp.cpp	Knuth-Morris-Pratt Algorithm
+strings/z.cpp	Funci\'on Z
+strings/str_suffix_array.cpp	Suffix Array en $O(n * log^{2}(n))$
+strings/str_suffix_array2.cpp	Suffix Array en $O(n * log n)$
+strings/hasher.h	Hashing para Cadenas
+strings/palindromizer.h	Palindromizer
+strings/aho_corasick.h	Aho-Corasick Algorithm
+strings/trie.h	Trie con Vectores
+strings/fact_dict.cpp	Dictionary Of Basic Factors en $O(n * log^{2}(n))$
+strings/manachar.cpp	Manachar's Algorithm
+strings/eertree.cpp	Palindromic Tree
+
+[Geometr\'ia]
+geometry/geo2d.h	Geometry Library
+geometry/convex_hull.cpp	Convex Hull
+geometry/vantage.cpp	Vantage-Point Tree
+
+
+# Depurar los siguientes Articulos:
+#closest_pp_sweep_line.cpp	Par de Puntos M\'as Cercanos (Sweep Line)
+#sweep_line_union_area.cpp	Union \'Area (Sweep Line)
+#ds_queue.h	Cola que Soporta la Operaci\'on M\'aximo en $O(1)$
+#suffix_tree.cpp	Suffix Tree Impl\'icito en $O(n * log^{2}(n))$
+#connect_din.cpp	Conectividad Din\'amica

@@ -1,0 +1,6 @@
+ - implementar el logaritmo discreto con base y modulo no coprimos. [LIGHTOJ 1325].
+ - Depurar ST beats.
+ - Terminar Berlekamp-Massey
+ - Poner en funciones de teoria de numeros la suma de factores primos. 
+ - Arreglar el algortimo de Kruskal
+ - Arreglar el uso de kosaraju en 2SAT
