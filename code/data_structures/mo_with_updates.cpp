@@ -1,12 +1,24 @@
 /* Algoritmo de Mo con Updates
- - Se necesita una estructura interval con los siguientes metodos:
-    * interval(): inicializa la estructura
-    * add(): agrega un elemento al intervalo.
-    * era(): elimina un elemento del intervalo.
-    * query(): la respuesta actual para el intervalo.
- - El arreglo A es el de los elementos dados en el problema.
- - Tiempo: O().
+ - Se necesita completar la estructura interval;
+ - Valores que debe tener la esturctura mo:
+    * El numero N: El largo del arreglo.
+	* El arreglo A: los elementos dados en el problema.
+ - Tiempo: O(Q * N^(2/3)).
 **/
+
+struct interval{
+	// Inicializa la estructura. Complejidad Maxima: O(Q * N^(2/3)).
+	interval();
+	
+	// Agrega un elemento al intervalo. Complejidad Maxima: O(1).
+	void add(int x);
+	
+	// Elimina un elemento del intervalo. Complejidad Maxima: O(1).
+	void era(int x);
+	
+	// La respuesta para el intervalo. Complejidad Maxima: O(N^(2/3)).
+	int query(); 		
+};
 
 struct mo{
     struct queri{
@@ -16,16 +28,15 @@ struct mo{
         int pos, val, old;
     };
     
-    int N;
+    int N, t = 0;
     int A[MX];
     vector<updati> upt;
     vector<queri> qry;
     interval S;
     
-    // Agrega una query a la estructura, en el rango [a, b] y con el
-    // indice id.
-    void add_qry(int a, int b, int id){
-        qry.pb({a, b, (int)upt.size() - 1, id});
+    // Agrega una query a la estructura, en el rango [a, b].
+    void add_qry(int a, int b){
+        qry.pb({a, b, (int)upt.size() - 1, t++});
     }
     
     // Agrega un update a la estructura, en la posicion pos, se cambial
@@ -70,7 +81,7 @@ struct mo{
             while( r < q.r ) S.add(A[++r]);
             while( r > q.r ) S.era(A[r--]);
             
-            ans[q.id - 1] = S.query();
+            ans[q.id] = S.query();
         }
         return ans;
     }
