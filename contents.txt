@@ -45,7 +45,7 @@ combinatorics/comb_permutaciones.cpp	Permutaciones: orden y n-\'esima
 combinatorics/comb_pascal_triangle.cpp	Combinaciones $O(n^2)$ 
 
 [Grafos]
-graphs/dijkstra_tested.cpp	Dijkstra's Algorithm
+graphs/dijkstra.cpp	Dijkstra's Algorithm
 graphs/spfa.cpp	SPFA + Small-Label-First Optimization
 graphs/bellman_ford.cpp	Bellman-Ford Algorithm
 graphs/kth_shortest_path.cpp	Kth Shortest Path

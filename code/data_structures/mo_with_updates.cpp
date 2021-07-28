@@ -2,22 +2,22 @@
  - Se necesita completar la estructura interval;
  - Valores que debe tener la esturctura mo:
     * El numero N: El largo del arreglo.
-	* El arreglo A: los elementos dados en el problema.
+    * El arreglo A: los elementos dados en el problema.
  - Tiempo: O(Q * N^(2/3)).
 **/
 
 struct interval{
-	// Inicializa la estructura. Complejidad Maxima: O(Q * N^(2/3)).
-	interval();
-	
-	// Agrega un elemento al intervalo. Complejidad Maxima: O(1).
-	void add(int x);
-	
-	// Elimina un elemento del intervalo. Complejidad Maxima: O(1).
-	void era(int x);
-	
-	// La respuesta para el intervalo. Complejidad Maxima: O(N^(2/3)).
-	int query(); 		
+    // Inicializa la estructura. Complejidad Maxima: O(Q * N^(2/3)).
+    interval();
+    
+    // Agrega un elemento al intervalo. Complejidad Maxima: O(1).
+    void add(int x);
+    
+    // Elimina un elemento del intervalo. Complejidad Maxima: O(1).
+    void era(int x);
+    
+    // La respuesta para el intervalo. Complejidad Maxima: O(N^(2/3)).
+    int query();         
 };
 
 struct mo{
