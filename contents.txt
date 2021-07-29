@@ -5,6 +5,7 @@
 
 [Miscel\'aneas]
 misc/misc_template.cpp	Code Template
+misc/misc_funciones_propias.cpp	Funciones Propias
 misc/misc_test.sh	Checker
 misc/misc_debug_tricks.h	Herramientas para el Debug
 misc/misc_especificadores.cpp	Especificadores de Conversi\'on
@@ -15,7 +16,6 @@ misc/misc_medir_tiempo.cpp	Tiempo Real de Ejecuci\'on de un Fragmento de C\'odig
 misc/misc_stack_size.cpp	Stack Size
 misc/misc_fast_input.cpp	Fast Input
 misc/misc_funciones_stl.cpp	Funciones Importantes de C++
-misc/misc_funciones_propias.cpp	Funciones Propias
 
 [Ad-Hoc]
 adhoc/adhoc_cube.cpp	Cubo de Seis Caras

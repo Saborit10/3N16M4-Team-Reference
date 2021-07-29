@@ -2,6 +2,42 @@
    Metodos Utiles con Bits
 */
 
+/* 
+ Metodos de C++ (si se agrega ll al final se puede usar con 
+ unsigned long long)
+**/
+/* ===============================================================  
+ - Retorna la cantidad de leading zeros 
+**/  
+    int __builtin_clz(unsigned int x) 
+/* ===============================================================
+ - Retorna la cantidad de trailing ceros 
+**/
+    int __builtin_ctz(unsigned int x) 
+/* ===============================================================
+ - Retorna la cantidad de 1-bits 
+**/
+    int __builtin_popcount(unsigned int x) 
+/* ===============================================================
+ - Retorna la cantidad de 1-bits modulo 2 
+**/
+    int __builtin_parity(unsigned int x) 
+/* ===============================================================
+ - Retorna 1 + el 1-bit menos significativo de x. Si x == 0, 
+   retorna 0 
+**/
+    int __builtin_ffs(int x)
+/* ============================================================ */
+
+
+/*
+    Hacks Utiles
+**/
+/* ===============================================================
+ - Devuelve true ssi el B-esimo bit de N (contando desde el menos
+   significativo) esta encendido.
+**/
+    #define test(N, B) (((N) & (1<<(B))) > 0)
 /* ===============================================================
  - Retorna el siguiente entero con igual cantidad de bits 
    encendidos 
@@ -25,32 +61,4 @@
         --i &= m; 
         //aqui i tiene el valor requerido
     }
-/* ============================================================ */
-
-/* 
- Metodos de C++ (si se agrega ll al final se puede usar con 
- unsigned long long)
-**/
-
-/* ===============================================================  
- - Retorna la cantidad de leading zeros 
-**/  
-    int __builtin_clz(unsigned int x) 
-/* ===============================================================
- - Retorna la cantidad de trailing ceros 
-**/
-    int __builtin_ctz(unsigned int x) 
-/* ===============================================================
- - Retorna la cantidad de 1-bits 
-**/
-    int __builtin_popcount(unsigned int x) 
-/* ===============================================================
- - Retorna la cantidad de 1-bits modulo 2 
-**/
-    int __builtin_parity(unsigned int x) 
-/* ===============================================================
- - Retorna 1 + el 1-bit menos significativo de x. Si x == 0, 
-   retorna 0 
-**/
-    int __builtin_ffs(int x)
 /* ============================================================ */
