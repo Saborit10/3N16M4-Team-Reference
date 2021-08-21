@@ -1,13 +1,13 @@
 /* Algoritmo de Dijkstra 
  - Dado un grafo con ARISTAS NO NEGATIVAS, retorna las distancias
    minimas desde el nodo inicial hasta todos los nodos.
- - Para grafos dirigidos arreglar el metodo add_edge
+ - add_edge agrega aristas dirigidas.
  - Tiempo: O(V + E * log(E) ).
  - Tested on: https://codeforces.com/contest/20/problem/C
 **/
-typedef int dtype;            // Tipo de datos que representa la distancia
+typedef int dtype;       // Tipo de datos que representa la distancia
 typedef pair<dtype, int> edge; 
-const dtype inf = INF;            // Infinito del tipo de datos dtype
+const dtype inf = INF;         // Infinito del tipo de datos dtype
 
 struct dijkstra{
     int cn;
@@ -22,7 +22,6 @@ struct dijkstra{
     
     void add_edge(int a, int b, dtype c){
         G[a].pb({c, b});
-        G[b].pb({c, a}); // Comentar esta linea si el grafo es dirigido
     }
     
     /* Operador [] para acceder a la lista de adyacencia */
