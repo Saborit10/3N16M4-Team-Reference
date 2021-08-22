@@ -1,8 +1,3 @@
-/* Lowest Common Ancestor 
- - Tiempo: Prec: O(cn*log(cn)). Query: O(log(cn)) 
- - Tested on: maxflow USACO Dic 2015 Platinum    
-**/
-
 typedef int edge;
 
 struct lca{
@@ -21,14 +16,10 @@ struct lca{
 	}
 	
 	void dfs(int nod, int p){
-		for(int i=0; i < len(G[nod]); i++){
-			edge nwn = G[nod][i];
-			
-			if( nwn != p ){
-				L[nwn] = L[nod] + 1;
-				P[nwn][0] = nod;
-				dfs(nwn, nod);
-			}
+		for(edge nwn: G[nod]) if( nwn != p ){
+			L[nwn] = L[nod] + 1;
+			P[nwn][0] = nod;
+			dfs(nwn, nod);
 		}
 	}
 	
