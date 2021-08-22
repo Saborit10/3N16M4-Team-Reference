@@ -8,8 +8,9 @@
    el id del nodo creado o del nodo correspondiente, de la version
    existente.
  - Tested on: https://www.spoj.com/problems/PSEGTREE/
+ - Tiempo: build: O(N), upt: O(lg N), qry: O(lg N).
+ - Memoria: O(N + Q * lg N).
 **/
-
 typedef int type;
 #define fun(T, X) function< T (int, int, int)> (X) = [&](int x, int xend, int nod)
 #define IZQ x, mid, T[nod].l
