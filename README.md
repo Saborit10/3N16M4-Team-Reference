@@ -33,3 +33,4 @@
 * Al final del encabezado indicar la complejidad temporal y espacial del algortimo o de cada metodo de la estructura de datos.
 * Comentar todo lo que se pueda ente lineas, cuidando la legibilidad del codigo.
 * Es IMPORTANTE que cada linea del codigo no exceda los 70 caracteres. De ser asi en el pdf final aparecera dividida en dos.
+* Como acordamos, hay que agregar codigos que esten listos para copiar y funciones cambiando la menor cantidad de cosas. 
