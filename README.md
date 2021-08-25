@@ -27,7 +27,7 @@
 * Correr la orden `python pdf.py`
 * Esta construccion, hecha en su maquina no se guarda en los cambios al proyecto.
 
-## Nomas para el Formato del Team Reference
+## Normas para el Formato del Team Reference
 
 * Encabezar cada documento con un comentario de forma igual al de los codigos ya existentes. 
 * Al final del encabezado indicar la complejidad temporal y espacial del algortimo o de cada metodo de la estructura de datos.
