@@ -17,6 +17,9 @@
 *.filters
 *.opendb
 
+*.swp
+*.save
+
 Debug
 Release
 x64

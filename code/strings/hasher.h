@@ -6,7 +6,12 @@
    compararse si la base(de tipo disp) de ambos es la misma.
  - Tiempo: Preproc: O(n), Query: O(1).
  - Tested on: patterns USACO 2006 Gold
+
+Lista de modulos(primos) utlies:
+ * 5767169		* 7340033			* 998244353			* 469762049
+ * 1000000007	* 1000000009		* 1107296257
 **/
+
 struct disp{
     int64 a, b;
 
