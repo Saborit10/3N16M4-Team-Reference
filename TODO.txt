@@ -4,3 +4,4 @@
  - Poner en funciones de teoria de numeros la suma de factores primos. 
  - Arreglar el algortimo de Kruskal
  - Arreglar el uso de kosaraju en 2SAT
+ - Probar el nuevo lca en otro problema

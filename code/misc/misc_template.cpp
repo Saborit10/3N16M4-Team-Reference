@@ -2,7 +2,7 @@
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
 #ifndef LOCAL 
-	#pragma GCC optimize("Ofast") 
+    #pragma GCC optimize("Ofast")
 #endif
 #define MX 200005
 #define INF (1<<30)
