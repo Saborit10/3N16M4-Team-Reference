@@ -77,19 +77,21 @@ flows/flows_dinic.cpp	Algoritmo de Dinic
 flows/flows_scaling_dinic.cpp	Scaling Optimization
 
 [Estructuras de Datos]
-# Unidimensionales
+# Segment Tree
+data_structures/segment_tree.cpp	Segment Tree B\'asico
+data_structures/stbeats.cpp	Segment Tree Beats
+
+# Otras Unidimensionales
 data_structures/ds_rmq.h	Range Min-Max Query
 data_structures/fenwick.h	Fenwick Tree
 data_structures/ds_wavelet_tree.h	Wavelet Tree
 data_structures/treap.cpp	Implicit Treap con Lazy Propagation
-data_structures/stbeats.cpp	Segment Tree Beats
 data_structures/mo.h	Mo's Algorithm
 data_structures/mo_with_updates.cpp	Mo's Algorithm with Updates
 
 # Bidimensionales
 data_structures/ds_rmq_2d.h	Range Min-Max Query en Dos Dimensiones
 data_structures/taccum.h	Tabla Acumulativa de Dos Dimensiones
-data_structures/quadtree.cpp	Quadtree
 
 # Miscelaneas
 data_structures/union_find.cpp	Union-Find

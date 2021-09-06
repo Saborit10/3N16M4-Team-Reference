@@ -6,3 +6,4 @@
  - Arreglar el uso de kosaraju en 2SAT
  - Probar el nuevo lca en otro problema
  - Testear mas el fast_hash. Hacer comparacion con el hasher
+ - Arreglar el quadtree o determinar la estructura de datos para sustituirlo.
