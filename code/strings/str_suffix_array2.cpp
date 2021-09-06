@@ -35,17 +35,17 @@ struct suffix_array{
         int sum, ma = max(300, N);
         memset(C, 0, sizeof C);     
     
-    for (int i=0; i < N; i++)       
-        C[i + k < N ? R[i + k] : 0]++;
-    
-    for (int i=sum=0; i < ma; i++){
-        int t = C[i]; C[i] = sum; sum += t;
-    }
-    
-    for (int i=0; i < N; i++)       
-        aa[ C[ A[i] + k < N ? R[ A[i] + k ] : 0 ]++ ] = A[i];
-    
-    for (int i=0; i < N; i++)   
-        A[i] = aa[i];
+        for (int i=0; i < N; i++)       
+            C[i + k < N ? R[i + k] : 0]++;
+        
+        for (int i=sum=0; i < ma; i++){
+            int t = C[i]; C[i] = sum; sum += t;
+        }
+        
+        for (int i=0; i < N; i++)       
+            aa[ C[ A[i] + k < N ? R[ A[i] + k ] : 0 ]++ ] = A[i];
+        
+        for (int i=0; i < N; i++)   
+            A[i] = aa[i];
     }
 };
