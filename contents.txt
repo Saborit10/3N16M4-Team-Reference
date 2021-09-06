@@ -116,12 +116,10 @@ strings/str_suffix_array.cpp	Suffix Array en $O(n * log^{2}(n))$
 strings/str_suffix_array2.cpp	Suffix Array en $O(n * log n)$
 strings/hasher.h	Hashing para Cadenas
 strings/fast_hash.cpp	Fast Hash
-strings/palindromizer.h	Palindromizer
 strings/aho_corasick.h	Aho-Corasick Algorithm
 strings/trie.h	Trie con Vectores
 strings/fact_dict.cpp	Dictionary Of Basic Factors en $O(n * log^{2}(n))$
 strings/manachar.cpp	Manachar's Algorithm
-strings/eertree.cpp	Palindromic Tree
 
 [Geometr\'ia]
 geometry/geo2d.h	Geometry Library
