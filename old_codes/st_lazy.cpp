@@ -16,7 +16,12 @@
 
  * Los parametros x, xend y nod se pueden agregar a los argumentos de
    estas funciones, de ser necesarios para los calculos. 
- 
+ * Cuando hay que dividir la marca en dos nodos y esta marca es
+   diferente para cada hijo, hay que cambiar el metodo apply por
+   apply_left y apply_right. Lo mismo para comb. Cambiar las llamadas
+   a estos metodos en lazy(). Hacer el apply de la "tag condition"
+   manualmente.
+    
  NODO NULL: 
  - Es un nodo que es neutro con respecto a la operacion + definida en
    la propia estructura.

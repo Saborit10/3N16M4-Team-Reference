@@ -79,7 +79,7 @@ flows/flows_scaling_dinic.cpp	Scaling Optimization
 [Estructuras de Datos]
 # Segment Tree
 data_structures/segment_tree.cpp	Segment Tree B\'asico
-data_structures/st_lazy.cpp	Segment Tree con Lazy Propagation
+data_structures/segment_tree_lazy.cpp	Segment Tree con Lazy Propagation
 data_structures/stbeats.cpp	Segment Tree Beats
 
 # Otras Unidimensionales
