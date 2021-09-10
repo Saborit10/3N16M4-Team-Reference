@@ -1,65 +1,63 @@
 /* Segment Tree
- - ST sencillo, con point update y query en rango.
- - Al constructor se le pasa el indice del ultimo elemento y el
-   arreglo. El tipo de este arreglo puede cambiar.
- - Para nodos de tipos primitivos, comentar la estruct node y hacer
-   typedef int node;
- - Para tipos no primitivos dejar declarada la estructura node.
- - Cambiar las lineas donde se asigna a T[nod] un node, segun convenga.
- - Para indexar desde cero, cambiar (1, N, 1) por (0, N, 1).
- - Tested on: https://codeforces.com/contest/1567/problem/e
-**/
+ - segment_tree(): construye el segment tree.
+ - upt(): actualiza la posicion a con el monoide t.
+ - qry(): devuelve la respuesta en el rango [a, b]. 
+ - Los constructores reciben o un arreglo de monoides, o un monoide,
+   el cual se convierte en el valor de las hojas.
+ 
+ Un Monoid es una clase que implementa los siguientes metodos:
+ - Monoid(): Constructor que crea el elemento identidad de los
+   monoides.
+ - Monoid(const Monoid&, const Monoid&): constructor a partir de
+   combinar dos monoides.
 
-struct node{
-    
-    node operator + (node p){
-        node ans;
-        
-        //Merge
-        return node;
-    }
-};
+ - Tested on: https://codeforces.com/contest/1567/problem/E
+*/
+#define izq (nod<<1)
+#define der (izq | 1)
+#define self x, xend, nod
+#define context int x, int xend, int nod
+#define call_childs(X, Y...) X(x, mid, izq, Y), X(mid+1, xend, der, Y)
+#define root 1, N, 1
 
-node null(  ); // Elemento neutro del merge de dos nodos.
-
-#define fun(T, X) function<T(int, int, int)> X = [&](int x, int xend, int nod)
-#define izq x, mid, nod*2
-#define der mid+1, xend, nod*2+1
-
+template<class M>
 struct segment_tree{
     int N;
-    node T[4*MX];
+    vector<M> T;
     
-    segment_tree(){}
-    segment_tree(int N, int *A): N(N){
-        fun(node, build){
-            if( x==xend )
-                return T[nod] = node(A[x]); // Cambiar segun convenga.
-            return T[nod] = build(izq) + build(der);
-        };
-        build(1, N, 1);
+    explicit segment_tree(int N, M t): N(N), T(4*N){
+        build(root, &t, NULL);
     }
     
-    void upt(int a, int b){
-        fun(node, upt){
-            if( a<=x && xend<=a )
-                return T[nod] = node(b);   // Cambiar segun convenga.
-            if( a < x || xend < a )
-                return T[nod];
-            return T[nod] = upt(izq) + upt(der);
-        };
-        upt(1, N, 1);
+    explicit segment_tree(int N, M* A): N(N), T(4*N){
+        build(root, NULL, A);
     }
     
-    node qry(int a, int b){
-        fun(node, qry){
-            if( a<=x && xend<=b ){
-                return T[nod];
-            }
-            if( b < x || xend < a )
-                return null;
-            return qry(izq) + qry(der);
-        };
-        return qry(1, N, 1);
+    void build(context, M* t, M* A){
+        if( x==xend ){
+            T[nod] = t ? *t : A[x];
+            return;
+        }
+        call_childs(build, t, A);
+        T[nod] = M(T[izq], T[der]);
+    }
+    
+    void upt(context, int a, M& t){
+        if( a < x || xend < a )
+            return;
+        if( a<=x && xend<=a )
+            T[nod] = t;
+        else{
+            call_childs(upt, a, t);
+            T[nod] = M(T[izq], T[der]);
+        }
+    }
+    
+    M qry(context, int a, int b){
+        if( b < x || xend < a )
+            return M();
+        if( a<=x && xend<=b )
+            return T[nod];
+        return M(call_childs(qry, a, b));
     }
 };
