@@ -32,7 +32,7 @@
 #define self x, xend, nod
 #define call_childs(X, Y...) X(x, mid, izq, Y), X(mid+1, xend, der, Y)
 #define context int x, int xend, int nod
-#define root 0, N, 1
+#define root 1, N, 1
 
 template<class M, class F>
 struct segment_tree{
