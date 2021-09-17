@@ -1,32 +1,35 @@
 /* Algoritmo de Kruskal
+ - Devuelve la lista de aristas que pertenecen al MST.
+ - _cost es el tipo de el costo asociado a cada arista.
+ - Tested on: https://codeforces.com/contest/1184/problem/E1
+ - Dependencias: struct ds;
 **/
-  
+typedef int _cost;
+
 struct edge{
-    int nod, nwn, cost;
-    
-    bool operator < (const edge &p)const{
-        return cost < p.cost;    
-    }
+	int a, b;
+	_cost c;
 };
 
-/* Encuentra el conjunto de nod */
-int fset(int nod){
-    if( nod != SET[nod] )
-        return SET[nod] = fset(SET[nod]);
-    return nod;    
-}
-
-/* Retorna verdadero si hubo que unir los conjuntos */
-bool join(int nod, int nwn){
-    nod = fset(nod), nwn = fset(nwn);
-    
-    if( nod == nwn ) return false;
-    if( nod < nwn ) swap(nod, nwn);
-    
-    SET[nod] = nwn;    
-    return true;
-}
-
-/* Inside the main */
-for(int i=1; i<=cn; i++)
-    SET[i] = i;
+struct kruskal{
+	ds S;
+	vector<edge> E;
+	
+	kruskal(int cn): S(cn){}
+	
+	void add_edge(int a, int b, _cost c){
+		E.pb({a, b, c});
+	}
+	
+	vector<edge> mst(){
+		vector<edge> ans;
+		 
+		sort(all(E), [](edge& a, edge& b){
+			return a.c < b.c;
+		});
+		
+		for(auto e: E) if( S.join(e.a, e.b) )
+			ans.pb(e);
+		return ans;
+	}
+};
