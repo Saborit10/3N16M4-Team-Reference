@@ -3,13 +3,12 @@
    comun mas bajo de dos nodos de dicho arbol.
  - Segun el tipo edge cambiar las lineas que usan nwn dentro de la
    funcion dfs().
- - El contructor lca() pide la cantidad de nodos, unalista de
+ - El contructor lca() pide la cantidad de nodos, una lista de
    adyacencia que represente al grafo, y el nodo raiz (puede faltar).
  - qry() devuelve el lca de a y b.
  - Tiempo: Prec: O(cn*log(cn)). Query: O(log(cn)) 
  - Tested on: https://www.spoj.com/problems/COT
 **/
-
 typedef int edge;
 
 struct lca{
