@@ -33,7 +33,7 @@ struct lca{
         for(int j=1, lg=log2(cn); j<=lg; j++)
             for(int i=1; i<=cn; i++){
                 P[i][j] = P[ P[i][j-1] ][j-1];
-				C[i][j] = T(C[i][j-1], C[ P[i][j-1] ][j-1]);
+                C[i][j] = T(C[i][j-1], C[ P[i][j-1] ][j-1]);
             }
     }
     
@@ -41,7 +41,7 @@ struct lca{
         for(auto i: G[nod]) if( i.nwn != p ){
             L[i.nwn] = L[nod] + 1;
             P[i.nwn][0] = nod;
-            C[i.nwn][0] = T(i.cost); 	// Esta linea se puede cambiar
+            C[i.nwn][0] = T(i.cost);    // Esta linea se puede cambiar
             dfs(i.nwn, nod);
         }
     }
