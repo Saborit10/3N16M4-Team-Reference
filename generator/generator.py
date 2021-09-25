@@ -1,11 +1,14 @@
+#! /usr/bin/python3
 
 import os
 
-INDEX_FILE = '../contents.txt'
+INDEX_FILE = '/home/luis/TEAM REFERENCE/contents.txt'
 SEP = '/* =========================== TEMPLATE CODE =========================== */\n'
 EXTENSION = '.cpp'
-CODE_FOLDER = '../code'
+CODE_FOLDER = '/home/luis/TEAM REFERENCE/code'
 LINE = 31
+
+TOPOLOGICAL_ORDER = []
 
 def get_index():
 	codes = []
@@ -52,12 +55,12 @@ def select(lista, msg):
 	else:
 		return lista[id-1]
 
-
 def inyect(line, template, filename):
 	f = open(filename, 'r')
 	code = f.readlines()
 	f.close()
 
+	# print(line, template, filename)
 	while len(code[line].strip()) > 0:
 		line += 1
 
@@ -84,6 +87,34 @@ def inyect(line, template, filename):
 	
 	f.close()
 
+def recursive_collect(template):
+	dependencies = []
+
+	with open(INDEX_FILE, 'r') as f:
+		for line in f:
+			dep = ''
+
+			if '#' in line:
+				id = line.find('#')
+				dep = line[id+1:].strip()
+				line = line[:id]
+			line = line.strip()
+			if len(line) == 0: continue
+			if line[0] != '[':
+				tmp = line.split('\t', 1)
+				# print(tmp[0], template)
+				if tmp[0] == template:
+					for i in dep.split('\t'):
+						if len(i) > 0:
+							dependencies.append(i)	
+					# print(template + " :: " + str(dependencies))
+	# print("LINE_NUMBER: " + line)
+
+	for d in dependencies:
+		# print('REC: ' + d)
+		recursive_collect(d)
+
+	TOPOLOGICAL_ORDER.append(template)
 
 if __name__ == '__main__':
 	index = get_index()
@@ -107,7 +138,13 @@ if __name__ == '__main__':
 		exit(0)
 	template = template[0]
 
-	inyect(LINE, os.path.join(CODE_FOLDER, template), filename)
+	recursive_collect(template)
+
+	TOPOLOGICAL_ORDER.reverse()
+
+	for template in TOPOLOGICAL_ORDER:
+		inyect(LINE, os.path.join(CODE_FOLDER, template), filename)
+		print('Generado %s.' % template)
 
 	print('========================================')
-	print('Codigo de la plantilla generado correctamente.')
+	

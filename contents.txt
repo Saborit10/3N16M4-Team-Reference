@@ -43,6 +43,7 @@ bits/bit_trie.h	Trie de Bits
 [Combinatoria]
 combinatorics/comb_permutaciones.cpp	Permutaciones: orden y n-\'esima
 combinatorics/comb_pascal_triangle.cpp	Combinaciones $O(n^2)$ 
+combinatorics/comb_combinations.cpp	Combinaciones en $O(log n)$				#math/mod_inv.cpp
 
 [Grafos]
 graphs/dijkstra.cpp	Dijkstra's Algorithm
@@ -51,7 +52,7 @@ graphs/bellman_ford.cpp	Bellman-Ford Algorithm
 graphs/kth_shortest_path.cpp	Kth Shortest Path
 
 graphs/prim.cpp	Prim's Algorithm
-graphs/kruskal.cpp	Kruskal's Algorithm
+graphs/kruskal.cpp	Kruskal's Algorithm										#data_structures/union_find.cpp
 
 graphs/graph_kahn.cpp	Kahn's Algorithm
 graphs/tarjan_artpoints.cpp	Tarjan's Articulation Points Algorithm
@@ -126,7 +127,8 @@ strings/fact_dict.cpp	Dictionary Of Basic Factors en $O(n * log^{2}(n))$
 strings/manachar.cpp	Manachar's Algorithm
 
 [Geometr\'ia]
-geometry/geo2d.h	Geometry Library
+geometry/pt.cpp	Clase Punto
+geometry/normalized_line.cpp	Recta Normalizada de la Forma $ax+by=c$			#geometry/pt.cpp
 geometry/convex_hull.cpp	Convex Hull
 geometry/vantage.cpp	Vantage-Point Tree
 
