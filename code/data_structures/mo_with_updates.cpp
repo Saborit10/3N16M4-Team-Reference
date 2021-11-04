@@ -11,7 +11,7 @@
 **/
 
 struct interval{
-	 // Inicializa la estructura. Complejidad Maxima: O(Q * N^(2/3)).
+    // Inicializa la estructura. Complejidad Maxima: O(Q * N^(2/3)).
     interval();
     
     // Agrega un elemento al intervalo. Complejidad Maxima: O(1).
@@ -41,9 +41,9 @@ struct mo{
     interval S;
     
     mo(int N, T* aa): N(N), t(0), A(1){
-		for(int i=1; i<=N; i++)
-			A.pb(aa[i]);
-	}
+        for(int i=1; i<=N; i++)
+            A.pb(aa[i]);
+    }
     
     // Agrega una query a la estructura, en el rango [a, b].
     void add_qry(int a, int b){
@@ -70,7 +70,7 @@ struct mo{
         });
         
         for(int i=len(upt)-1; ~i; i--)
-			A[ upt[i].pos ] = upt[i].old;
+            A[ upt[i].pos ] = upt[i].old;
         
         int l = 1, r = 0, t = -1;
         for(auto q: qry){

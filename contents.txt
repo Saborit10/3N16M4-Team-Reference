@@ -34,6 +34,7 @@ math/dlog.cpp	Logaritmo Discreto
 math/pollar.java	Pollar-Rho
 math/math_fft.cpp	Fast Fourier Transform
 math/math_ntt.h	Number Theoretic Transform
+math/linear_sieve.cpp	Criba Lineal para la Funci\'on de M\"obius
 
 [Manipulaci\'on de Bits]
 bits/bits.cpp	Metodos para Manipular Bits
