@@ -8,3 +8,5 @@
 
 
  - Agregar un sistema para validar las dependencias
+ 
+ - Probar el euler tour en http://poj.org/problem?id=2230
