@@ -24,7 +24,7 @@ adhoc/adhoc_lis.cpp	Longest Increasing Subsequence
 adhoc/adhoc_floyd.h	Algoritmo de Floyd
 
 [Matem\'atica]
-math/mod_inv.cpp	Exponenciaci\'on e Inverso Modular 
+math/mod_operations.cpp	Operaciones con M\'odulo y Potenciaci\'on
 math/matrix.h	Trabajo con Matrices
 math/fast_rec.cpp	Resoluci\'on Recurrencias Lineales en $O(K^3log(N))$
 math/number_theory.cpp	Criba y Funciones de Teor\'ia de N\'umeros
