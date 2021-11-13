@@ -1,51 +1,42 @@
 /* Algoritmo de Dijkstra 
- - Dado un grafo con ARISTAS NO NEGATIVAS, retorna las distancias
-   minimas desde el nodo inicial hasta todos los nodos.
- - add_edge agrega aristas dirigidas.
+ - Dado un grafo con ARISTAS NO NEGATIVAS, retorna un vector con las
+   distancias minimas desde el nodo inicial hasta todos los nodos.
+ - MIEMBROS DE EDGE: nwn, cost, comparador greater.
  - Tiempo: O(V + E * log(E) ).
  - Tested on: https://codeforces.com/contest/20/problem/C
 **/
-typedef int dtype;       // Tipo de datos que representa la distancia
-typedef pair<dtype, int> edge; 
-const dtype inf = INF;         // Infinito del tipo de datos dtype
+typedef int64 dtype;      // Tipo de datos de la distancia
+const dtype inf = INF64;   // Infinito del tipo dtype
 
-struct dijkstra{
-    int cn;
-    dtype dist[MX];
-    vector<edge> G[MX];
-    priority_queue<edge, vector<edge>, greater<edge>> Q;
+struct edge{
+    int nwn;
+    dtype cost;
     
-    dijkstra(int cn): cn(cn){
-        for(int i=0; i<=cn; i++)
-            G[i].clear();
-    }
-    
-    void add_edge(int a, int b, dtype c){
-        G[a].pb({c, b});
-    }
-    
-    /* Operador [] para acceder a la lista de adyacencia */
-    vector<edge>& operator[] (int v){ return G[v]; }
-    
-    vector<dtype> solve(int ni){
-        fill(dist, dist+cn+1, inf); dist[ni] = 0; // Limpiando dist
-        
-        for(Q.push({0, ni}); !Q.empty(); ){
-            int nod = Q.top().sc;
-             
-            if( dist[nod] < Q.top().fr ){ // Si la distancia minima del
-                Q.pop();                  // nodo ya fue calculada, no
-                continue;                 // se analiza  nuevamente
-            }
-            Q.pop();
-            
-            for(auto i: G[nod]){
-                if( dist[i.sc] > dist[nod] + i.fr ){
-                    dist[i.sc] = dist[nod] + i.fr;
-                    Q.push({dist[i.sc], i.sc});
-                }
-            }
-        }
-        return vector<dtype>(dist, dist+cn+1); 
+    bool operator < (const edge& p)const{
+        return cost > p.cost;
     }
 };
+
+vector<dtype> dijkstra(int cn, int ni, vector<edge> G[]){
+    priority_queue<edge> Q;
+    vector<dtype> dist(cn + 1, inf);
+    dist[ni] = 0;
+    
+    for(Q.push({ni, 0}); !Q.empty(); ){
+        int nod = Q.top().nwn;
+             
+        if( dist[nod] < Q.top().cost ){ 
+            Q.pop();
+            continue;
+        }
+        Q.pop();
+            
+        for(auto i: G[nod]){
+            if( dist[i.nwn] > dist[nod] + i.cost ){
+                dist[i.nwn] = dist[nod] + i.cost;
+                Q.push({i.nwn, dist[i.nwn]});
+            }
+        }
+    }
+    return dist;
+}
