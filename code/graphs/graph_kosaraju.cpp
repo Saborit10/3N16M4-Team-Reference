@@ -3,44 +3,51 @@
    en orden topologico, o cuando se necesita el grafo traspuesto para
    otra cosa.
  - Encuentra todos los ciclos de largo 2 o mas.
- - Se necesita cinstruir el grafo traspuesto T.
- - El metodo kosaraju() devuelve un vector con los nodos 
-   identificadores de cada componente, en orden topologico. El 
+ - El metodo scc_order() devuelve un vector con los nodos
+   identificadores de cada componente, en orden topologico. El
    arreglo SET guarda, para cada nodo, el nodo identificador de su
    componente.
  - Tiempo: O(V+E). Memo: O(E).
- - Tested on: COCI 2006-2007 Contest 3: BICIKLI
-OJO: si se usa el nodo cero como dummy, hay que inicializar el arreglo 
-   SET[1..cn] a -1.
+ - Tested on: http://codeforces/contest/1608/problem/C
 **/
+struct kosaraju{
+	int cn;
+	vector<int> SET, K, *G;
+	vector<bool> mk;
+	vector<vector<int>> T;
 
-int SET[MX];
-bool mk[MX];
-vector<int> T[MX];
-stack<int> K;
+	kosaraju(int cn, vector<int> G[]): cn(cn), G(G){
+		SET = vector<int>(cn+1);
+		mk = vector<bool>(cn+1);
+		T = vector<vector<int>>(cn+1);
 
-void tsort(int nod){
-    mk[nod] = true;
-    for(auto nwn: G[nod]) if( !mk[nwn] )
-        tsort(nwn);
-    K.push(nod);
-}
+		for(int u=0; u<=cn; u++) for(auto v: G[u])
+			T[v].pb(u);
+	}
 
-void flood(int nod, int x){
-    SET[nod] = x;
-    for(auto nwn: T[nod]) if( !SET[nwn] )
-        flood(nwn, x);
-}
+	void tsort(int nod){
+	    mk[nod] = true;
+	    for(auto nwn: G[nod]) if( !mk[nwn] )
+	        tsort(nwn);
+	    K.pb(nod);
+	}
 
-vector<int> kosaraju(){
-    vector<int> ans;
-    
-    for(int i=1; i<=cn; i++) if( !mk[i] )
-        tsort(i);
-    
-    for(; !K.empty(); K.pop()) if( !SET[K.top()] ){
-        ans.pb(K.top());
-        flood(K.top(), K.top());
-    }
-    return ans;
-}
+	void flood(int nod, int x){
+		SET[nod] = x;
+		for(auto nwn: T[nod]) if( !SET[nwn] )
+			flood(nwn, x);
+	}
+
+	vector<int> scc_order(){
+		vector<int> ans;
+
+		for(int i=1; i<=cn; i++) if( !mk[i] )
+			tsort(i);
+
+		for(; !K.empty(); K.pop_back()) if( !SET[K.back()] ){
+			ans.pb(K.back());
+			flood(K.back(), K.back());
+		}
+		return ans;
+	}
+};
