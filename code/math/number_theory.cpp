@@ -16,7 +16,8 @@
 **/
 
 /* Criba de Eratostenes */
-bool mk[MX];
+const int MN = 1'000'000;
+bool mk[MN+5];
 vector<int> p;
 
 void init(){

@@ -9,7 +9,6 @@ misc/misc_funciones_propias.cpp	Funciones Propias
 misc/misc_test.sh	Checker
 misc/misc_debug_tricks.h	Herramientas para el Debug
 misc/misc_especificadores.cpp	Especificadores de Conversi\'on
-misc/misc_funcion_debug.cpp	Funcion Debug
 misc/misc_math_expression.java	Procesar Expresiones Matem\'aticas 
 misc/misc_parse_line.cpp	Parsear una L\'inea Completa a Enteros
 misc/misc_medir_tiempo.cpp	Tiempo Real de Ejecuci\'on de un Fragmento de C\'odigo 
@@ -49,7 +48,6 @@ combinatorics/comb_combinations.cpp	Combinaciones en $O(log n)$				#math/mod_inv
 [Grafos]
 graphs/dijkstra.cpp	Dijkstra's Algorithm
 graphs/spfa.cpp	SPFA + Small-Label-First Optimization
-graphs/bellman_ford.cpp	Bellman-Ford Algorithm
 graphs/kth_shortest_path.cpp	Kth Shortest Path
 
 graphs/prim.cpp	Prim's Algorithm
@@ -59,14 +57,11 @@ graphs/graph_kahn.cpp	Kahn's Algorithm
 graphs/tarjan_artpoints.cpp	Tarjan's Articulation Points Algorithm
 graphs/tarjan_bridges.cpp	Tarjan's Bridges Algorithm
 graphs/tarjan_scc.cpp	Tarjan's SCC Algorithm
-graphs/bridge_tree.cpp	Construcci\'on del Bridge Tree
 graphs/graph_kosaraju.cpp	Kosaraju's SCC Algorithm
 graphs/2sat.cpp	2SAT
 graphs/euler.cpp	Euler Tour
 
 [\'Arboles]
-trees/tree_diam.cpp	Di\'ametro de un \'Arbol
-trees/diametro_y_camino.cpp	Di\'ametro de un \'Arbol Construido
 trees/lca.h	Lowest Common Ancestor
 trees/lca_with_cost.cpp	Lowest Common Ancestor con Pesos
 trees/centroid.cpp	Centroid Decomposition
@@ -83,12 +78,10 @@ flows/flows_scaling_dinic.cpp	Scaling Optimization
 # Segment Tree
 data_structures/segment_tree.cpp	Segment Tree B\'asico
 data_structures/segment_tree_lazy.cpp	Segment Tree con Lazy Propagation
-data_structures/stbeats.cpp	Segment Tree Beats
 
 # Otras Unidimensionales
 data_structures/ds_rmq.h	Range Min-Max Query
 data_structures/fenwick.h	Fenwick Tree
-data_structures/ds_wavelet_tree.h	Wavelet Tree
 data_structures/treap.cpp	Implicit Treap con Lazy Propagation
 data_structures/mo.h	Mo's Algorithm
 data_structures/mo_with_updates.cpp	Mo's Algorithm with Updates

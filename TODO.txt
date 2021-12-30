@@ -1,4 +1,3 @@
- - Depurar ST beats.
  - Terminar Berlekamp-Massey
  - Poner en funciones de teoria de numeros la suma de factores primos. 
  - Arreglar el uso de kosaraju en 2SAT
@@ -8,14 +7,12 @@
 
  - Agregar un sistema para validar las dependencias
  
- - Probar el euler tour en http://poj.org/problem?id=2230
 
 
 BARRIDO:
 
-Capitulo 2:
- - Probar el LIS Greedy
-
 Capitulo 3:
  - Arreglar el producto de minimo.
  - Hacer el logaritmo discreto para modulos compuestos.
+
+Probar el SPFA
