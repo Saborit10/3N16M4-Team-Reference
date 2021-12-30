@@ -2,7 +2,7 @@
 
 ## Requerimientos
 
-* python 2
+* python
 * latex
 
 ## Estructura

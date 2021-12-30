@@ -5,9 +5,14 @@
  - Memoria: O(n lg n).
  - Solution for: COCI 2013-2014 slasticar
 **/
+
+
+
 struct rmq{
-    int T[MX][20];
+    vector<vector<int>> T;
     
+    
+
     void build(int N, int* A){
         for(int i=1; i<=N; i++)
             T[i][0] = A[i];
