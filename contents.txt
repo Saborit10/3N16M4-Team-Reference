@@ -26,6 +26,7 @@ adhoc/adhoc_floyd.h	Algoritmo de Floyd
 math/mod_operations.cpp	Operaciones con M\'odulo y Potenciaci\'on
 math/matrix.h	Trabajo con Matrices
 math/fast_rec.cpp	Resoluci\'on Recurrencias Lineales en $O(K^3log(N))$
+math/gauss.cpp	M\'etodo de Gauss para Resolver un SEL							#math/mod_operations.cpp
 math/number_theory.cpp	Criba y Funciones de Teor\'ia de N\'umeros
 math/euclides.cpp	Algoritmo de Euclides Extendido
 math/crt.cpp	Teorema Chino del Resto
@@ -48,7 +49,6 @@ combinatorics/comb_combinations.cpp	Combinaciones en $O(log n)$				#math/mod_inv
 [Grafos]
 graphs/dijkstra.cpp	Dijkstra's Algorithm
 graphs/spfa.cpp	SPFA + Small-Label-First Optimization
-graphs/kth_shortest_path.cpp	Kth Shortest Path
 
 graphs/prim.cpp	Prim's Algorithm
 graphs/kruskal.cpp	Kruskal's Algorithm										#data_structures/union_find.cpp
@@ -58,14 +58,13 @@ graphs/tarjan_artpoints.cpp	Tarjan's Articulation Points Algorithm
 graphs/tarjan_bridges.cpp	Tarjan's Bridges Algorithm
 graphs/tarjan_scc.cpp	Tarjan's SCC Algorithm
 graphs/graph_kosaraju.cpp	Kosaraju's SCC Algorithm
-graphs/2sat.cpp	2SAT
+graphs/2sat.cpp	2sat 													#graphs/graph_kosaraju.cpp
 graphs/euler.cpp	Euler Tour
 
 [\'Arboles]
 trees/lca.h	Lowest Common Ancestor
 trees/lca_with_cost.cpp	Lowest Common Ancestor con Pesos
 trees/centroid.cpp	Centroid Decomposition
-trees/euler_tour_tree.cpp	Tree Into Array
 trees/small_to_large.cpp	Small to Large
 trees/small_to_large_ale.cpp	Small to Large (Ale's Style)
 

@@ -16,3 +16,6 @@ Capitulo 3:
  - Hacer el logaritmo discreto para modulos compuestos.
 
 Probar el SPFA
+Probar el rmq
+Probar el Kahn
+Probar el Gauss para doubles e implementarlo con bitsets.
