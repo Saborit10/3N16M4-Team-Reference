@@ -7,18 +7,26 @@
    adyacencia que represente al grafo, y el nodo raiz (puede faltar).
  - qry() devuelve el lca de a y b.
  - Tiempo: Prec: O(cn*log(cn)). Query: O(log(cn)) 
- - Tested on: https://www.spoj.com/problems/COT
+ - Tested on: https://codeforces.com/contest/555/problem/E
 **/
-typedef int edge;
+typedef vector<int> vii;
 
 struct lca{
     int cn;
     vector<edge> *G;
-    int L[MX], P[MX][20];
+    vector<vii> P;
+    vector<int> L;
     
-    lca(int cn, vector<edge> G[], int ni=1): cn(cn), G(G){
-        L[ni] = 1, P[ni][0] = 0;
-        dfs(ni, -1);
+    lca(int cn, vector<edge> G[]): cn(cn), G(G){
+        int l = log2(cn) + 2;
+        L = vector<int>(cn+1);
+        P = vector<vii>(cn+1, vii(l));
+         
+        for(int i=1; i<=cn; i++) if( !L[i] ){
+			L[i] = 1, P[i][0] = 0;
+        
+			dfs(i, -1);
+		}
         
         for(int j=1, lg=log2(cn); j<=lg; j++)
             for(int i=1; i<=cn; i++)
@@ -26,10 +34,10 @@ struct lca{
     }
     
     void dfs(int nod, int p){
-        for(auto nwn: G[nod]) if( nwn != p ){
-            L[nwn] = L[nod] + 1;
-            P[nwn][0] = nod;
-            dfs(nwn, nod);
+        for(auto i: G[nod]) if( i.nwn != p ){
+            L[i.nwn] = L[nod] + 1;
+            P[i.nwn][0] = nod;
+            dfs(i.nwn, nod);
         }
     }
     
