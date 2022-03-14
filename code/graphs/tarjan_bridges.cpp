@@ -13,7 +13,6 @@
  - Tiempo: O(V+E) . Memoria: O(E).
  - Tested: https://codeforces.com/problemset/problem/652/E
 **/
-
 struct tarjan_bridges{
     int cn, t;
     vector<edge>* G;
