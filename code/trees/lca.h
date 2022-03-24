@@ -23,10 +23,10 @@ struct lca{
         P = vector<vii>(cn+1, vii(l));
          
         for(int i=1; i<=cn; i++) if( !L[i] ){
-			L[i] = 1, P[i][0] = 0;
+            L[i] = 1, P[i][0] = 0;
         
-			dfs(i, -1);
-		}
+            dfs(i, -1);
+        }
         
         for(int j=1, lg=log2(cn); j<=lg; j++)
             for(int i=1; i<=cn; i++)

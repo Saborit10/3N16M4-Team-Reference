@@ -6,6 +6,7 @@
    compararse si la base(de tipo disp) de ambos es la misma.
  - Tiempo: Preproc: O(n), Query: O(1).
  - Tested on: patterns USACO 2006 Gold
+ - Tested on: https://codeforces.com/contest/1657/problem/C
 
 Lista de modulos(primos) utlies:
  * 5767169       * 7340033           * 998244353            * 469762049
@@ -42,11 +43,13 @@ void init(){
 
 struct hasher{
     int N;
-    disp H[MX];
+    vector<disp> H;
 
     hasher(){}
     hasher(string& S){
         N = S.size();
+        H = vector<disp>(N+2);
+       
         for(int i=0; i < N; i++){
             H[i] = P[i] * (disp){S[i] - 'a' + 1, S[i] - 'a' + 1};
             H[i] = H[i] + (i ? H[i-1] : (disp){0, 0});
