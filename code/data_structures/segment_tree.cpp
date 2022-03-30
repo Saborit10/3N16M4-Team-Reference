@@ -10,7 +10,9 @@
    monoides.
  - Monoid(const Monoid&, const Monoid&): constructor a partir de
    combinar dos monoides.
-
+ 
+ - En la definicion de root, hay que cambiar el n por el largo del
+   segment tree.
  - Tested on: https://codeforces.com/contest/1567/problem/E
 */
 #define izq (nod<<1)
@@ -18,18 +20,19 @@
 #define self x, xend, nod
 #define context int x, int xend, int nod
 #define call_childs(X, Y...) X(x, mid, izq, Y), X(mid+1, xend, der, Y)
-#define root 1, N, 1
+#define root 1, n, 1
+#warning ARREGLAR_EL_N
 
 template<class M>
 struct segment_tree{
-    int N;
+    int n;
     vector<M> T;
     
-    explicit segment_tree(int N, M t): N(N), T(4*N){
+    explicit segment_tree(int n, M t): n(n), T(4*n + 5){
         build(root, &t, NULL);
     }
     
-    explicit segment_tree(int N, M* A): N(N), T(4*N){
+    explicit segment_tree(int n, M* A): n(n), T(4*n + 5){
         build(root, NULL, A);
     }
     
