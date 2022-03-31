@@ -58,7 +58,7 @@ graphs/tarjan_artpoints.cpp	Tarjan's Articulation Points Algorithm
 graphs/tarjan_bridges.cpp	Tarjan's Bridges Algorithm
 graphs/tarjan_scc.cpp	Tarjan's SCC Algorithm
 graphs/graph_kosaraju.cpp	Kosaraju's SCC Algorithm
-graphs/2sat.cpp	2sat 													#graphs/graph_kosaraju.cpp
+graphs/2sat.cpp	2sat													#graphs/graph_kosaraju.cpp
 graphs/euler.cpp	Euler Tour
 
 [\'Arboles]
