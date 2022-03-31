@@ -126,6 +126,8 @@ geometry/normalized_line.cpp	Recta Normalizada de la Forma $ax+by=c$			#geometry
 geometry/convex_hull.cpp	Convex Hull
 geometry/vantage.cpp	Vantage-Point Tree
 
+[Adjuntos]
+other/fenwick_2d.cpp	Fenwick Tree de Dos Dimensiones
 
 # Depurar los siguientes Articulos:
 #closest_pp_sweep_line.cpp	Par de Puntos M\'as Cercanos (Sweep Line)
