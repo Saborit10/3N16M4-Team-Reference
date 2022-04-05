@@ -128,6 +128,14 @@ geometry/vantage.cpp	Vantage-Point Tree
 
 [Adjuntos]
 other/fenwick_2d.cpp	Fenwick Tree de Dos Dimensiones
+other/ciclos_dg.cpp	Ciclos en Grafo Dirigido
+other/desarreglos.cpp	Desarreglos
+other/matrices.cpp	Movimientos de Matrices
+other/pas_comp.cpp	Comparador
+other/st_vectores.cpp	Segment Tree con Vectores
+other/submask.cpp	Subm\'ascaras
+other/tabla_acumulativa_2d.cpp	Tabla Acumulativa 2D
+other/ternary_search.cpp	B\'usqueda Ternaria
 
 # Depurar los siguientes Articulos:
 #closest_pp_sweep_line.cpp	Par de Puntos M\'as Cercanos (Sweep Line)
